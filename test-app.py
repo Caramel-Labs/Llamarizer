@@ -1,5 +1,9 @@
+# WARNING - this app does not function as intended. Please use 'app.py' as the Streamlit frontend.
+
 import streamlit as st
-from streamlit_chat import message
+
+# install 'streamlit-chat' in the virtualenv and uncomment this line
+# from streamlit_chat import message
 import llama
 
 
