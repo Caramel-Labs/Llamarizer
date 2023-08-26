@@ -1,60 +1,31 @@
 import streamlit as st
-from streamlit_chat import message
 import llama
 
+st.title("Echo Bot")
 
-def clear_chat():
-    st.session_state.messages = [
-        {"role": "assistant", "content": "Say something to get started!"}
-    ]
-
-
-st.title("Llama2 Clarifai Test App")
-
-
+# Initialize chat history
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [
-        {"role": "assistant", "content": "Say something to get started!"}
-    ]
+    st.session_state.messages = []
 
+# Display chat messages from history on app rerun
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
-with st.form("chat_input", clear_on_submit=True):
-    a, b = st.columns([4, 1])
+# React to user input
+if prompt := st.chat_input("What is up?"):
+    # Display user message in chat message container
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    # Add user message to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
 
-    user_prompt = a.text_input(
-        label="Your message:",
-        placeholder="Type something...",
-        label_visibility="collapsed",
-    )
+response = f"Echo: {prompt}"
+response = llama.get_response(prompt)
 
-    b.form_submit_button("Send", use_container_width=True)
+# Display assistant response in chat message container
+with st.chat_message("assistant"):
+    st.markdown(response)
 
-
-for msg in st.session_state.messages:
-    message(msg["content"], is_user=msg["role"] == "user")
-
-
-if user_prompt:
-    print("user_prompt: ", user_prompt)
-
-    st.session_state.messages.append({"role": "user", "content": user_prompt})
-
-    message(user_prompt, is_user=True)
-
-    response = llama.get_response(
-        user_prompt
-    )  # get response from llama2 API (in our case from Workflow we created before)
-
-    msg = {"role": "assistant", "content": response}
-
-    print("st.session_state.messages: ", st.session_state.messages)
-
-    st.session_state.messages.append(msg)
-
-    print("msg.content: ", msg["content"])
-
-    message(msg["content"])
-
-
-if len(st.session_state.messages) > 1:
-    st.button("Clear Chat", on_click=clear_chat)
+# Add assistant response to chat history
+st.session_state.messages.append({"role": "assistant", "content": response})
