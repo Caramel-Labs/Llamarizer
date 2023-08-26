@@ -1,2 +1,3 @@
 # Llama2-with-Clarifai
- Submission for "Llama2 with Clarifai Hackathon" by LabLab
+
+Work in progress, do not clone and execute.
