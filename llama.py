@@ -12,7 +12,7 @@ USER_ID = st.secrets.USER_ID
 APP_ID = st.secrets.APP_ID
 
 # The ID of the Llama2 workflow to use
-WORKFLOW_ID = "new-workflow"
+WORKFLOW_ID = st.secrets.WORKFLOW_ID
 
 
 # Function to get a response from the Llama2 model
