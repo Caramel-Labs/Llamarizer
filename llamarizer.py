@@ -1,8 +1,10 @@
 import streamlit as st
 import model
 
+# Page name, favicon and layout
 st.set_page_config(page_title="Llamarizer", page_icon=":llama:", layout="centered")
 
+# Page title and description
 st.title("🦙 Llamarizer")
 st.markdown(
     "Summarize long passages of text using the Llama2 AI model, powered by Clarifai. Brought to you by <a href='https://github.com/Caramel-Labs'>Caramel Labs</a>.",
@@ -26,9 +28,11 @@ if prompt := st.chat_input("Enter text to summarize"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
+# Initialize variables for modified prompt and response from model
 modified_prompt = ""
 response = ""
 
+# Get response from model if user has entered a prompt
 if prompt:
     modified_prompt = f"""Summarize the following text: \n\n{prompt} \n\nSummary: """
     print(modified_prompt)
