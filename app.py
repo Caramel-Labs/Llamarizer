@@ -14,8 +14,6 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-print(st.session_state.messages)
-
 # React to user input
 if prompt := st.chat_input("Enter text to summarize"):
     # Display user message in chat message container
@@ -24,7 +22,6 @@ if prompt := st.chat_input("Enter text to summarize"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-print(st.session_state.messages)
 
 modified_prompt = ""
 response = ""
@@ -34,11 +31,9 @@ if prompt:
     print(modified_prompt)
     response = llama.get_response(modified_prompt)
 
-# Display assistant response in chat message container
-with st.chat_message("assistant"):
-    st.markdown(response)
+    # Display assistant response in chat message container
+    with st.chat_message("assistant"):
+        st.markdown(response)
 
-# Add assistant response to chat history
-st.session_state.messages.append({"role": "assistant", "content": response})
-
-print(st.session_state.messages)
+    # Add assistant response to chat history
+    st.session_state.messages.append({"role": "assistant", "content": response})
