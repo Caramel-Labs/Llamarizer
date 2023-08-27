@@ -7,7 +7,7 @@ st.set_page_config(page_title="Llama Explainer", page_icon=":llama:", layout="ce
 # Page title and description
 st.title("🦙 Llama Explainer")
 st.markdown(
-    "This is the page description. You can add <a href='https://github.com/Caramel-Labs'>HTML</a> similar to how you would in Markdown.",
+    "Explain long passages of text using the Llama2 AI model, powered by Clarifai. Brought to you by <a href='https://github.com/Caramel-Labs'>Caramel Labs</a>.",
     unsafe_allow_html=True,
 )
 
