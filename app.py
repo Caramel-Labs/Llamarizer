@@ -1,5 +1,5 @@
 import streamlit as st
-import llama
+import model
 
 st.title("Llamarizer")
 
@@ -27,9 +27,9 @@ modified_prompt = ""
 response = ""
 
 if prompt:
-    modified_prompt = f"""Summarize the following text: \n{prompt} \n\nSummary: """
+    modified_prompt = f"""Summarize the following text: \n\n{prompt} \n\nSummary: """
     print(modified_prompt)
-    response = llama.get_response(modified_prompt)
+    response = model.get_response(modified_prompt)
 
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
