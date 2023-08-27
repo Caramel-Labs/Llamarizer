@@ -109,7 +109,7 @@ streamlit run llamarizer.py
 
 Streamlit will start up in `localhost:8501`.
 
-<b>NOTE</b> - `app.py` is a basic template for any applications you wish to create, while `model.py` provides the connection to Llama2 on Clarifai. All other Python files in this repo are standalone Streamlit apps which you can run using the above command.
+<b>NOTE</b> - `app-template.py` is a basic template for any applications you wish to create, while `model.py` provides the connection to Llama2 on Clarifai. All other Python files in this repo are standalone Streamlit apps which you can run using the above command.
 
 <hr />
 
