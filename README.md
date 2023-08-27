@@ -98,13 +98,7 @@ Finally, copy the name of the workflow and include it in the `WORKFLOW_ID` of `.
 After you have completed the above steps, you can start the Streamlit app.
 
 ```shell
-streamlit run <filename>.py
-```
-
-For example,
-
-```shell
-streamlit run llamarizer.py
+streamlit run app.py
 ```
 
 Streamlit will start up in `localhost:8501`.
