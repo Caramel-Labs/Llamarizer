@@ -4,7 +4,7 @@ import streamlit as st
 
 # install 'streamlit-chat' in the virtualenv and uncomment this line
 # from streamlit_chat import message
-import llama
+import model
 
 
 def clear_chat():
@@ -49,7 +49,7 @@ if user_prompt:
     print(f"Message passed to frontend: {user_prompt}")
 
     # get response from Llama2 API
-    response = llama.get_response(user_prompt)
+    response = model.get_response(user_prompt)
     print(f'Response from Llama2 API: "{response}"')
     print(type(response))
 
