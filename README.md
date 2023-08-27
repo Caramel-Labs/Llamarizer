@@ -1,4 +1,6 @@
-# Llama2 with Clarifai
+# 🦙 Llamarizer
+
+Llamarizer uses the Llama2-13b LLM created by Meta AI to summarize long passages of text.
 
 This is the submission done by Caramel Labs for the <a href="https://lablab.ai/event/llama-2-hackathon-with-clarifai"><b>Llama2 Hackathon with Clarifai</b></a>, organized by LabLab.
 
