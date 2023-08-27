@@ -1,9 +1,12 @@
 import streamlit as st
 import model
 
+st.set_page_config(page_title="Llamarizer", page_icon=":llama:", layout="centered")
+
 st.title("🦙 Llamarizer")
 st.markdown(
-    "Summarize long passages of text using the Llama2 AI model, powered by Clarifai."
+    "Summarize long passages of text using the Llama2 AI model, powered by Clarifai. Brought to you by <a href='https://github.com/Caramel-Labs'>Caramel Labs</a>.",
+    unsafe_allow_html=True,
 )
 
 # Initialize chat history
