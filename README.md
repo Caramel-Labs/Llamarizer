@@ -1,6 +1,6 @@
 # Llama2 with Clarifai
 
-This is the submission done by Caramel Labs for the <b>Llama2 with Clarifai</b> Hackathon, organized by LabLab.
+This is the submission done by Caramel Labs for the <a href="https://lablab.ai/event/llama-2-hackathon-with-clarifai"><b>Llama2 Hackathon with Clarifai</b></a>, organized by LabLab.
 
 ## Setup
 
