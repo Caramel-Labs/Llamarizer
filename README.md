@@ -78,7 +78,7 @@ USER_ID = "bar"
 WORKFLOW_ID = "foo-bar"
 ```
 
-1. You can obtain your `PAT` from your Clarifai Account Settings.
+1. You can obtain your `PAT` from your <a href="https://clarifai.com/settings">Clarifai Account Settings</a>.
 2. The `APP_ID` is the unique ID of whatever app you have created and wish to connect to from your Streamlit app.
 3. The `USER_ID` is simply your username.
 4. The `WORKFLOW_ID` will be set up in the next step.
